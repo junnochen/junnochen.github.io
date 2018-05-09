@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[MakeDown语法]]></title>
     <url>%2F2018%2F05%2F09%2FMakeDown%E8%AF%AD%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[hexo 表示超链接 ##大标题 ###小标题blah blah blah 空格 中文全角空格表示文章标题 内容 区块引用1 23列表 内容* 表示强调内容 图片]]></content>
+    <content type="text"><![CDATA[Markdown 表示超链接 ##大标题 ###小标题blah blah blah 空格 中文全角空格表示文章标题 内容 区块引用1 23列表 内容* 表示强调内容 图片]]></content>
   </entry>
   <entry>
     <title><![CDATA[利用开源框架搭建自己的博客]]></title>
