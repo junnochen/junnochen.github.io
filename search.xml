@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[域名绑定]]></title>
     <url>%2F2018%2F05%2F22%2F%E5%9F%9F%E5%90%8D%E7%BB%91%E5%AE%9A%2F</url>
-    <content type="text"><![CDATA[域名绑定在这之前你已经搭建好了博客，已经可以通过类似：https://junnochen.github.io/的方法访问。 1.没有域名的话先去申请一个域名2.添加域名解析ping你的http://github.io域名，得到一个IP；修改域名解析记录； 在仓库里添加CNAME文件并在文件中填写绑定的域名 文件里填写要绑定的域名且不要包含Http://和www进入设置，找到 Custom domain添加域名后保存]]></content>
+    <content type="text"><![CDATA[域名绑定在这之前你已经搭建好了博客，已经可以通过类似：https://junnochen.github.io/的方法访问。 没有域名的话先去申请一个域名添加域名解析ping你的http://github.io域名，得到一个IP；修改域名解析记录； 在仓库里添加CNAME文件并在文件中填写绑定的域名文件里填写要绑定的域名且不要包含Http://和www进入设置，找到 Custom domain添加域名后保存]]></content>
   </entry>
   <entry>
     <title><![CDATA[MarkDown语法]]></title>
