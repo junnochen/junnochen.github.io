@@ -229,6 +229,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/增删改查/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junlong Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jackchen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/20/增删改查/" itemprop="url">SpringBoot增删改查实例</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T17:52:21+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="SpringBoot增删改查实例"><a href="#SpringBoot增删改查实例" class="headerlink" title="SpringBoot增删改查实例"></a>SpringBoot增删改查实例</h1><h2 id="完整的项目结构"><a href="#完整的项目结构" class="headerlink" title="完整的项目结构"></a>完整的项目结构</h2><p><img src="/2018/08/20/增删改查/项目结构.png" alt="项目结构"></p>
+<h2 id="1、修改pom-xml-添加JPA和MySQL的依赖"><a href="#1、修改pom-xml-添加JPA和MySQL的依赖" class="headerlink" title="1、修改pom.xml,添加JPA和MySQL的依赖"></a>1、修改pom.xml,添加<code>JPA</code>和<code>MySQL</code>的依赖</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-jpa<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2、修改application-yml-配置JPA和数据库"><a href="#2、修改application-yml-配置JPA和数据库" class="headerlink" title="2、修改application.yml,配置JPA和数据库"></a>2、修改application.yml,配置<code>JPA</code>和数据库</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  profiles:</span><br><span class="line">      active: dev</span><br><span class="line"></span><br><span class="line">  datasource:</span><br><span class="line">    url: jdbc:mysql:<span class="comment">//127.0.0.1:3306/dbcurd?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false</span></span><br><span class="line">    username: root</span><br><span class="line">    password: <span class="number">123456</span></span><br><span class="line">    driver-class-name: com.mysql.jdbc.Driver</span><br><span class="line">  jpa:</span><br><span class="line">    hibernate:</span><br><span class="line">      ddl-auto: update</span><br><span class="line">    show-sql: <span class="keyword">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="3、创建与数据表对应的实体类Person"><a href="#3、创建与数据表对应的实体类Person" class="headerlink" title="3、创建与数据表对应的实体类Person"></a>3、创建与数据表对应的实体类Person</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span>  <span class="comment">//主键id</span></span><br><span class="line">    <span class="meta">@GeneratedValue</span>  <span class="comment">//自增长</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//必须要有构造函数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行项目后，查看数据库，会自动创建表 person ,(使用了navicat图形化工具查看)</p>
+<p><img src="/2018/08/20/增删改查/person.png" alt="person"></p>
+<h2 id="3、创建接口-PersonRepository-java"><a href="#3、创建接口-PersonRepository-java" class="headerlink" title="3、创建接口 PersonRepository.java"></a>3、创建接口 PersonRepository.java</h2><p>PersonRepository.java位于<code>dao</code>包下,<code>PersonController</code>调用该接口继承自<code>JpaRepository</code>的方法，来实现和数据库交互 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public interface PersonRepository extends JpaRepository&lt;Person,Integer&gt; &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4、创建控制器PersonController-java"><a href="#4、创建控制器PersonController-java" class="headerlink" title="4、创建控制器PersonController.java"></a>4、创建控制器PersonController.java</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">@RestController</span><br><span class="line">public class PersonController &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    PersonRepository personRepository;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     *@Author:Junno</span><br><span class="line">     *@Description: 查询所有数据</span><br><span class="line">     *@Date: 17:00 2018/8/20</span><br><span class="line">    */</span><br><span class="line">    @GetMapping(&quot;/persons&quot;)</span><br><span class="line">    public List&lt;Person&gt; personList()&#123;</span><br><span class="line">        return personRepository.findAll();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先在在数据库中手动添加两条数据 </p>
+<p><img src="/2018/08/20/增删改查/添加两条数据.png" alt="添加两条数据"></p>
+<p>启动项目执行请求 <a href="localhost:8081/persons" target="_blank" rel="noopener">localhost:8081/persons</a></p>
+<h2 id="5、其他增删改查的方法"><a href="#5、其他增删改查的方法" class="headerlink" title="5、其他增删改查的方法"></a>5、其他增删改查的方法</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Author</span>:Junno</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Description</span> : 添加一条信息</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Date</span>: 17:13 2018/8/20</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@PostMapping</span>(value = <span class="string">"/person"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Person <span class="title">addPerson</span><span class="params">(@RequestParam(<span class="string">"name"</span>)</span> String name,</span></span><br><span class="line"><span class="function">                            @<span class="title">RequestParam</span><span class="params">(<span class="string">"age"</span>)</span> Integer age)</span>&#123;</span><br><span class="line"></span><br><span class="line">    Person person = <span class="keyword">new</span> Person();</span><br><span class="line">    person.setName(name);</span><br><span class="line">    person.setAge(age);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> personRepository.save(person);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Author</span>:Junno</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Description</span>: 更新一条信息</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Date</span>: 17:26 2018/8/20</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@PutMapping</span>(value = <span class="string">"/person/&#123;id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Person <span class="title">updatePerson</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id,</span></span><br><span class="line"><span class="function">                           @<span class="title">RequestParam</span><span class="params">(<span class="string">"name"</span>)</span> String name,</span></span><br><span class="line"><span class="function">                           @<span class="title">RequestParam</span><span class="params">(<span class="string">"age"</span>)</span> Integer age)</span>&#123;</span><br><span class="line"></span><br><span class="line">    Person person = <span class="keyword">new</span> Person();</span><br><span class="line">    person.setId(id);</span><br><span class="line">    person.setName(name);</span><br><span class="line">    person.setAge(age);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> personRepository.save(person);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Author</span>:Junno</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Description</span>: 根据id查询</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Date</span>: 17:38 2018/8/20</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@GetMapping</span>(value = <span class="string">"/person/&#123;id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Person <span class="title">findOnePerson</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> personRepository.findById(id).orElse(<span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Author</span>:Junno</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Description</span>: 删除</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@Date</span>: 17:40 2018/8/20</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@DeleteMapping</span>(value = <span class="string">"/person/&#123;id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deletePerson</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">    personRepository.deleteById(id);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对应的请求方式为： </p>
+<ul>
+<li><h3 id="添加一个用户-用的是Postman"><a href="#添加一个用户-用的是Postman" class="headerlink" title="添加一个用户  (用的是Postman)"></a>添加一个用户  (用的是Postman)</h3></li>
+</ul>
+<p><img src="/2018/08/20/增删改查/添加1.0.png" alt="添加1.0"></p>
+<p><img src="/2018/08/20/增删改查/添加1.1.png" alt=""></p>
+<ul>
+<li><h3 id="更新一个用户"><a href="#更新一个用户" class="headerlink" title="更新一个用户"></a>更新一个用户</h3></li>
+</ul>
+<p><img src="/2018/08/20/增删改查/更新1.0.png" alt=""></p>
+<p><img src="/2018/08/20/增删改查/更新1.1.png" alt=""></p>
+<ul>
+<li><h3 id="查询一个用户："><a href="#查询一个用户：" class="headerlink" title="查询一个用户："></a>查询一个用户：</h3></li>
+</ul>
+<p><img src="/2018/08/20/增删改查/id查.png" alt=""></p>
+<ul>
+<li><h3 id="删除一个用户（无返回值"><a href="#删除一个用户（无返回值" class="headerlink" title="删除一个用户（无返回值)"></a>删除一个用户（无返回值)</h3><p><img src="/2018/08/20/增删改查/删1.0.png" alt=""></p>
+<p><img src="/2018/08/20/增删改查/删1.1.png" alt=""></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/email/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -311,6 +463,136 @@
 <p><img src="/2018/08/20/email/发送成功.png" alt="发送成功"></p>
 <p>查看邮箱可以收到刚发送的邮件 </p>
 <p><img src="/2018/08/20/email/收件箱.png" alt="收件箱"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/20/springboot实现发送邮件功能/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junlong Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jackchen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/20/springboot实现发送邮件功能/" itemprop="url">springboot实现发送邮件功能</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-20T12:59:16+08:00">
+                2018-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>近期学了springboot，记录springboot实现发送邮件功能，编译器用IDEA</p>
+<h2 id="1、配置邮件服务器"><a href="#1、配置邮件服务器" class="headerlink" title="1、配置邮件服务器"></a>1、配置邮件服务器</h2><p>本文使用网易163邮箱测试，在以下界面中开启smtp服务器，设置授权码，在后面代码中会使用到,发送方和接受方都需要这样设置。</p>
+<p><img src="/2018/08/20/springboot实现发送邮件功能/email/设置客户端授权码.png" alt="设置客户端授权码"></p>
+<h2 id="2、实现邮件客户端"><a href="#2、实现邮件客户端" class="headerlink" title="2、实现邮件客户端"></a>2、实现邮件客户端</h2><h3 id="1）修改pom-xml，添加依赖库"><a href="#1）修改pom-xml，添加依赖库" class="headerlink" title="1）修改pom.xml，添加依赖库"></a>1）修改pom.xml，添加依赖库</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-mail<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2）修改application-yml，添加邮箱配置"><a href="#2）修改application-yml，添加邮箱配置" class="headerlink" title="2）修改application.yml，添加邮箱配置"></a>2）修改application.yml，添加邮箱配置</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#JavaMailSender邮件发送的配置</span><br><span class="line">spring:</span><br><span class="line">  mail:</span><br><span class="line">    host: smtp.163.com</span><br><span class="line">    username: xxxxx@163.com</span><br><span class="line">    password: xxxx        #授权码登录</span><br><span class="line">    from: xxxx@163.com  #发送方账号信息</span><br><span class="line">    properties:</span><br><span class="line">      mail:</span><br><span class="line">        smtp:</span><br><span class="line">          auth: true</span><br><span class="line">          timeout: 25000</span><br><span class="line">          starttls:</span><br><span class="line">            enable: true</span><br><span class="line">            required: true</span><br><span class="line">sendmails:</span><br><span class="line">  touser: xxxx@163.com  #发送给谁</span><br><span class="line">title:</span><br><span class="line">  name: firstEmail  #标题文件</span><br></pre></td></tr></table></figure>
+<h3 id="3）新增MailController"><a href="#3）新增MailController" class="headerlink" title="3）新增MailController"></a>3）新增MailController</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MailController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> Logger logger = LoggerFactory.getLogger(MailController.class);</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JavaMailSender sender;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//发送方</span></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;spring.mail.from&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String from;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//接收方</span></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;sendmails.touser&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String[] touser;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//标题</span></span><br><span class="line">    <span class="meta">@Value</span>(<span class="string">"$&#123;title.name&#125;"</span>)</span><br><span class="line">    <span class="keyword">private</span> String title;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/sends"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">sendmail</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        MimeMessage message = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            message = sender.createMimeMessage();</span><br><span class="line">            MimeMessageHelper helper = <span class="keyword">new</span> MimeMessageHelper(message, <span class="keyword">true</span>, <span class="string">"utf-8"</span>);<span class="comment">//项目字符集 要设置成 utf-8 否则会有乱码问题</span></span><br><span class="line">            helper.setFrom(from);</span><br><span class="line">            helper.setTo(touser);</span><br><span class="line">            helper.setSubject(<span class="string">"标题："</span> + title);</span><br><span class="line">            helper.setText(<span class="string">"发送的内容"</span>, <span class="keyword">true</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (MessagingException e) &#123;</span><br><span class="line">            logger.debug(<span class="string">"系统发送邮件 异常"</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        sender.send(message);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"系统发送邮件成功。。。"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4）运行测试"><a href="#4）运行测试" class="headerlink" title="4）运行测试"></a>4）运行测试</h3><p>浏览器中输入：</p>
+<p><a href="http://localhost:8080/sends" target="_blank" rel="noopener">http://localhost:8080/sends</a></p>
+<p><img src="/2018/08/20/springboot实现发送邮件功能/email/发送成功.png" alt="发送成功"></p>
+<p>查看邮箱可以收到刚发送的邮件 </p>
+<p><img src="/2018/08/20/springboot实现发送邮件功能/email/收件箱.png" alt="收件箱"></p>
 
           
         
@@ -1141,7 +1423,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
