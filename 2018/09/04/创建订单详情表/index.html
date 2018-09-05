@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="当前项目结构 生成PayStatusEnum.java文件【enums】12345678910111213141516171819202122package com.imooc.sell.enums;import lombok.Getter;@Getterpublic enum PayStatusEnum &amp;#123;    WAIT(0,&quot;等待支付&quot;),    SUCCESS(1,&quot;支付成功&quot;)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="创建订单详情表">
+<meta property="og:url" content="http://yoursite.com/2018/09/04/创建订单详情表/index.html">
+<meta property="og:site_name" content="Jackchen">
+<meta property="og:description" content="当前项目结构 生成PayStatusEnum.java文件【enums】12345678910111213141516171819202122package com.imooc.sell.enums;import lombok.Getter;@Getterpublic enum PayStatusEnum &amp;#123;    WAIT(0,&quot;等待支付&quot;),    SUCCESS(1,&quot;支付成功&quot;)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/09/04/创建订单详情表/当前结构.png">
+<meta property="og:updated_time" content="2018-09-05T08:48:33.782Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="创建订单详情表">
+<meta name="twitter:description" content="当前项目结构 生成PayStatusEnum.java文件【enums】12345678910111213141516171819202122package com.imooc.sell.enums;import lombok.Getter;@Getterpublic enum PayStatusEnum &amp;#123;    WAIT(0,&quot;等待支付&quot;),    SUCCESS(1,&quot;支付成功&quot;)">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/04/创建订单详情表/当前结构.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/04/创建订单详情表/"/>
+
+
+
+
+
+  <title>创建订单详情表 | Jackchen</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Jackchen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/创建订单详情表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junlong Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Jackchen">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">创建订单详情表</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T13:12:43+08:00">
+                2018-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="当前项目结构"><a href="#当前项目结构" class="headerlink" title="当前项目结构"></a>当前项目结构</h2><p><img src="/2018/09/04/创建订单详情表/当前结构.png" alt="目前项目结构"></p>
+<h2 id="生成PayStatusEnum-java文件【enums】"><a href="#生成PayStatusEnum-java文件【enums】" class="headerlink" title="生成PayStatusEnum.java文件【enums】"></a>生成PayStatusEnum.java文件【enums】</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.imooc.sell.enums;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Getter;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> PayStatusEnum &#123;</span><br><span class="line">    WAIT(<span class="number">0</span>,<span class="string">"等待支付"</span>),</span><br><span class="line">    SUCCESS(<span class="number">1</span>,<span class="string">"支付成功"</span>),</span><br><span class="line">    ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String message;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    PayStatusEnum(Integer code, String message) &#123;</span><br><span class="line">        <span class="keyword">this</span>.code = code;</span><br><span class="line">        <span class="keyword">this</span>.message = message;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成OrderDetail-java文件-【dataobject】"><a href="#生成OrderDetail-java文件-【dataobject】" class="headerlink" title="生成OrderDetail.java文件 【dataobject】"></a>生成OrderDetail.java文件 【dataobject】</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.imooc.sell.dataobject;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.persistence.Entity;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Id;</span><br><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: sell</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 订单详情表</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Junno</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-09-03 19:41</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="meta">@Entity</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderDetail</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Id</span></span><br><span class="line">    <span class="keyword">private</span> String detailId;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*订单id.*/</span></span><br><span class="line">    <span class="keyword">private</span> String orderId;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*商品id*/</span></span><br><span class="line">    <span class="keyword">private</span> String productId;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*商品名称.*/</span></span><br><span class="line">    <span class="keyword">private</span> String productName;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*商品单价.*/</span></span><br><span class="line">    <span class="keyword">private</span> BigDecimal productPrice;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*商品数量.*/</span></span><br><span class="line">    <span class="keyword">private</span> Integer productQuantity;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*商品小图 */</span></span><br><span class="line">    <span class="keyword">private</span> String productIcon;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">OrderDetail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成OrderDetailRepository-java文件-【repository】"><a href="#生成OrderDetailRepository-java文件-【repository】" class="headerlink" title="生成OrderDetailRepository.java文件 【repository】"></a>生成OrderDetailRepository.java文件 【repository】</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.imooc.sell.repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.dataobject.OrderDetail;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.jpa.repository.JpaRepository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: sell</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 订单详情DAO</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Junno</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-09-03 20:50</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OrderDetailRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">OrderDetail</span>,<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">List&lt;OrderDetail&gt; <span class="title">findByOrderId</span> <span class="params">(String orderId)</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成OrderDetailRepositoryTest-java-文件"><a href="#生成OrderDetailRepositoryTest-java-文件" class="headerlink" title="生成OrderDetailRepositoryTest.java 文件"></a>生成OrderDetailRepositoryTest.java 文件</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.imooc.sell.repository;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.dataobject.OrderDetail;</span><br><span class="line"><span class="keyword">import</span> org.junit.Assert;</span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.*;</span><br><span class="line"><span class="meta">@RunWith</span>(SpringRunner.class)</span><br><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderDetailRepositoryTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span>  OrderDetailRepository repository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">saveTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">        OrderDetail orderDetail = <span class="keyword">new</span> OrderDetail();</span><br><span class="line">        orderDetail.setDetailId(<span class="string">"1234567810"</span>);</span><br><span class="line">        orderDetail.setOrderId(<span class="string">"111111112"</span>);</span><br><span class="line">        orderDetail.setProductIcon(<span class="string">"http://xxx.jpg"</span>);</span><br><span class="line">        orderDetail.setProductId(<span class="string">"11111112"</span>);</span><br><span class="line">        orderDetail.setProductName(<span class="string">"辣椒炒肉"</span>);</span><br><span class="line">        orderDetail.setProductPrice(<span class="keyword">new</span> BigDecimal(<span class="number">13.3</span>));</span><br><span class="line">        orderDetail.setProductQuantity(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        OrderDetail result =  repository.save(orderDetail);</span><br><span class="line">        Assert.assertNotNull(result);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">findByOrderId</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        List&lt;OrderDetail&gt; orderDetailList = repository.findByOrderId(<span class="string">"111111112"</span>);</span><br><span class="line"></span><br><span class="line">        Assert.assertNotEquals(<span class="number">0</span>, orderDetailList.size());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成OrderDTO-java文件【DTO用于数据传输】"><a href="#生成OrderDTO-java文件【DTO用于数据传输】" class="headerlink" title="生成OrderDTO.java文件【DTO用于数据传输】"></a>生成OrderDTO.java文件【DTO用于数据传输】</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.sell.dto;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.dataobject.OrderDetail;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.dataobject.OrderMaster;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.enums.OrderStatusEnum;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.enums.PayStatusEnum;</span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: sell</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 数据传输对象</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Junno</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-09-04 13:36</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderDTO</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*订单id.*/</span></span><br><span class="line">    <span class="keyword">private</span>  String orderId;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*买家名字.*/</span></span><br><span class="line">    <span class="keyword">private</span>  String buyerName;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*买家手机号.*/</span></span><br><span class="line">    <span class="keyword">private</span> String buyerPhone;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*买家地址.*/</span></span><br><span class="line">    <span class="keyword">private</span> String buyerAddress;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*买家微信OpenId.*/</span></span><br><span class="line">    <span class="keyword">private</span> String buyerOpenid;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*订单总金额.*/</span></span><br><span class="line">    <span class="keyword">private</span> BigDecimal orderAmount;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*订单状态，默认为新下单*/</span></span><br><span class="line">    <span class="keyword">private</span> Integer orderStatus;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*支付状态，默认为0未支付.*/</span></span><br><span class="line">    <span class="keyword">private</span> Integer payStatus ;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*创建时间.*/</span></span><br><span class="line">    <span class="keyword">private</span> Date createTime;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*更新时间.*/</span></span><br><span class="line">    <span class="keyword">private</span> Date updateTime;</span><br><span class="line"></span><br><span class="line">    List&lt;OrderDetail&gt; orderDetailList;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成CartDTO-java文件-【DTO】"><a href="#生成CartDTO-java文件-【DTO】" class="headerlink" title="生成CartDTO.java文件 【DTO】"></a>生成CartDTO.java文件 【DTO】</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.sell.dto;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: sell</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 购物车</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Junno</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-09-04 19:32</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CartDTO</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*商品id.*/</span></span><br><span class="line">    <span class="keyword">private</span> String productId;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*商品数量.*/</span></span><br><span class="line">    <span class="keyword">private</span>  Integer productQuantity;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">CartDTO</span><span class="params">(String productId, Integer productQuantity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.productId = productId;</span><br><span class="line">        <span class="keyword">this</span>.productQuantity = productQuantity;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成OrderService-java-service"><a href="#生成OrderService-java-service" class="headerlink" title="生成OrderService.java [service]"></a>生成OrderService.java [service]</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">package</span> com.imooc.sell.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.dto.OrderDTO;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.Page;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.Pageable;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: sell</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: 订单表service</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Junno</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-09-04 13:29</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">OrderService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*创建订单.*/</span></span><br><span class="line">    <span class="function">OrderDTO <span class="title">create</span><span class="params">(OrderDTO orderDTO)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*查询单个订单.*/</span></span><br><span class="line">    <span class="function">OrderDTO <span class="title">findOne</span><span class="params">(String orderId)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*查询订单列表.*/</span></span><br><span class="line">    <span class="function">Page&lt;OrderDTO&gt; <span class="title">findList</span><span class="params">(String buyerOpenid, Pageable pageable)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*取消订单.*/</span></span><br><span class="line">    <span class="function">OrderDTO <span class="title">cancel</span><span class="params">(OrderDTO orderDTO)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*完结订单.*/</span></span><br><span class="line">    <span class="function">OrderDTO <span class="title">finish</span><span class="params">(OrderDTO orderDTO)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*支付订单.*/</span></span><br><span class="line">    <span class="function">OrderDTO <span class="title">paid</span><span class="params">(OrderDTO orderDTO)</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成SellException-java-【exception异常处理】"><a href="#生成SellException-java-【exception异常处理】" class="headerlink" title="生成SellException.java 【exception异常处理】"></a>生成SellException.java 【exception异常处理】</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.sell.exception;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.enums.ResultEnum;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: sell</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>: sell异常处理</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Junno</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-09-04 14:25</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SellException</span> <span class="keyword">extends</span> <span class="title">RuntimeException</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Integer code;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SellException</span><span class="params">(ResultEnum resultEnum)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(resultEnum.getMessage());</span><br><span class="line"></span><br><span class="line">        <span class="keyword">this</span>.code = resultEnum.getCode();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成KeyUtil-java文件-用于生成orderId-utils"><a href="#生成KeyUtil-java文件-用于生成orderId-utils" class="headerlink" title="生成KeyUtil.java文件 用于生成orderId [utils]"></a>生成KeyUtil.java文件 用于生成orderId [utils]</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.sell.utils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Random;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: sell</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Junno</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-09-04 19:01</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">KeyUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *<span class="doctag">@Description</span>: 生成唯一的主键</span></span><br><span class="line"><span class="comment">     *@格式： 时间+随机数</span></span><br><span class="line"><span class="comment">     *<span class="doctag">@Author</span>: Junno</span></span><br><span class="line"><span class="comment">     *<span class="doctag">@Date</span>: 18-9-4 下午7:03</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span>  <span class="keyword">static</span> <span class="keyword">synchronized</span> String <span class="title">genUniqueKey</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        Random random = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="comment">//6位随机数</span></span><br><span class="line">        Integer number = random.nextInt(<span class="number">900000</span>)+<span class="number">100000</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> System.currentTimeMillis()+ String.valueOf(number);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成OrderServiceImpl-java文件-【service-impl】"><a href="#生成OrderServiceImpl-java文件-【service-impl】" class="headerlink" title="生成OrderServiceImpl.java文件 【service.impl】"></a>生成OrderServiceImpl.java文件 【service.impl】</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.sell.service.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.dataobject.OrderDetail;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.dataobject.OrderMaster;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.dataobject.ProductInfo;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.dto.CartDTO;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.dto.OrderDTO;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.enums.OrderStatusEnum;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.enums.PayStatusEnum;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.enums.ResultEnum;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.exception.SellException;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.repository.OrderDetailRepository;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.repository.OrderMasterRepository;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.service.OrderService;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.service.ProductService;</span><br><span class="line"><span class="keyword">import</span> com.imooc.sell.utils.KeyUtil;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.BeanUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.Page;</span><br><span class="line"><span class="keyword">import</span> org.springframework.data.domain.Pageable;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.transaction.Transactional;</span><br><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Collectors;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@program</span>: sell</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@description</span>:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>: Junno</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@create</span>: 2018-09-04 14:01</span></span><br><span class="line"><span class="comment"> **/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderServiceImpl</span> <span class="keyword">implements</span> <span class="title">OrderService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> ProductService productService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> OrderDetailRepository orderDetailRepository;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> OrderMasterRepository orderMasterRepository;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *<span class="doctag">@Description</span>: 创建订单</span></span><br><span class="line"><span class="comment">     *<span class="doctag">@Author</span>: Junno</span></span><br><span class="line"><span class="comment">     *<span class="doctag">@Date</span>: 18-9-4 下午9:10</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> OrderDTO <span class="title">create</span><span class="params">(OrderDTO orderDTO)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//随机生成订单id</span></span><br><span class="line">        String orderId = KeyUtil.genUniqueKey();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//初始总价0</span></span><br><span class="line">        BigDecimal orderAmount = <span class="keyword">new</span> BigDecimal(BigInteger.ZERO);</span><br><span class="line"></span><br><span class="line"><span class="comment">//        List&lt;CartDTO&gt; cartDTOList = new ArrayList&lt;&gt;();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//1.查询商品（数量，价格）</span></span><br><span class="line">        <span class="keyword">for</span>(OrderDetail orderDetail : orderDTO.getOrderDetailList())&#123;</span><br><span class="line">            ProductInfo productInfo = productService.findOne(orderDetail.getProductId());</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(productInfo == <span class="keyword">null</span>)&#123;<span class="comment">//如果为空，抛出异常</span></span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> SellException(ResultEnum.PRODUCT_NOT_EXIST);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//2.计算订单总价：单价×数量+orderAmount</span></span><br><span class="line">            orderAmount = productInfo.getProductPrice()</span><br><span class="line">                    .multiply(<span class="keyword">new</span> BigDecimal(orderDetail.getProductQuantity()))</span><br><span class="line">                    .add(orderAmount);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//订单详情入库</span></span><br><span class="line">            orderDetail.setDetailId(KeyUtil.genUniqueKey());</span><br><span class="line">            orderDetail.setOrderId(orderId);</span><br><span class="line">            <span class="comment">//把商品表中的属性拷贝到订单详情表中</span></span><br><span class="line">            BeanUtils.copyProperties(productInfo, orderDetail);</span><br><span class="line">            orderDetailRepository.save(orderDetail);</span><br><span class="line"></span><br><span class="line"><span class="comment">//            CartDTO cartDTO = new CartDTO(orderDetail.getProductId(), orderDetail.getProductQuantity());</span></span><br><span class="line"><span class="comment">//            cartDTOList.add(cartDTO);</span></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.写入订单数据库（orderMaster和orderDetail)</span></span><br><span class="line">        OrderMaster orderMaster = <span class="keyword">new</span> OrderMaster();</span><br><span class="line">        <span class="comment">//属性拷贝 把orderDTO中的属性拷贝到orderMaster</span></span><br><span class="line">        BeanUtils.copyProperties(orderDTO, orderMaster);</span><br><span class="line">        orderMaster.setOrderId(orderId);</span><br><span class="line">        orderMaster.setOrderAmount(orderAmount);<span class="comment">//计算出来的总价</span></span><br><span class="line">        orderMaster.setOrderStatus(OrderStatusEnum.NEW.getCode());</span><br><span class="line">        orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());</span><br><span class="line"></span><br><span class="line">        orderMasterRepository.save(orderMaster);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//4.扣库存</span></span><br><span class="line">        List&lt;CartDTO&gt; cartDTOList = orderDTO.getOrderDetailList().stream().map(e -&gt;</span><br><span class="line">                <span class="keyword">new</span> CartDTO(e.getProductId(), e.getProductQuantity())</span><br><span class="line">        ).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        productService.decreaseStock(cartDTOList);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> orderDTO;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> OrderDTO <span class="title">findOne</span><span class="params">(String orderId)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Page&lt;OrderDTO&gt; <span class="title">findList</span><span class="params">(String buyerOpenid, Pageable pageable)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> OrderDTO <span class="title">cancel</span><span class="params">(OrderDTO orderDTO)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> OrderDTO <span class="title">finish</span><span class="params">(OrderDTO orderDTO)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> OrderDTO <span class="title">paid</span><span class="params">(OrderDTO orderDTO)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="生成OrderServiceImplTest-java-测试"><a href="#生成OrderServiceImplTest-java-测试" class="headerlink" title="生成OrderServiceImplTest.java 测试"></a>生成OrderServiceImplTest.java 测试</h2><p>package com.imooc.sell.service.impl;</p>
+<p>import com.imooc.sell.dataobject.OrderDetail;<br>import com.imooc.sell.dto.OrderDTO;<br>import lombok.extern.slf4j.Slf4j;<br>import org.junit.Assert;<br>import org.junit.Test;<br>import org.junit.runner.RunWith;<br>import org.springframework.beans.factory.annotation.Autowired;<br>import org.springframework.boot.test.context.SpringBootTest;<br>import org.springframework.test.context.junit4.SpringRunner;</p>
+<p>import java.util.ArrayList;<br>import java.util.List;</p>
+<p>import static org.junit.Assert.*;</p>
+<p>@RunWith(SpringRunner.class)<br>@SpringBootTest<br>@Slf4j<br>public class OrderServiceImplTest {</p>
+<pre><code>@Autowired
+private OrderServiceImpl orderService;
+
+private final String BUYER_OPENID = &quot;110110&quot;;
+
+@Test
+public void create() {
+
+    OrderDTO orderDTO = new OrderDTO();
+    orderDTO.setBuyerName(&quot;李四&quot;);
+    orderDTO.setBuyerAddress(&quot;北京&quot;);
+    orderDTO.setBuyerPhone(&quot;01234567891&quot;);
+    orderDTO.setBuyerOpenid(BUYER_OPENID);
+
+    //购物车
+    List&lt;OrderDetail&gt; orderDetailList = new ArrayList&lt;&gt;();
+
+    OrderDetail o1 = new OrderDetail();
+    o1.setProductId(&quot;123456&quot;);
+    o1.setProductQuantity(1);
+
+
+    OrderDetail o2 = new OrderDetail();
+    o2.setProductId(&quot;123457&quot;);
+    o2.setProductQuantity(2);
+
+    orderDetailList.add(o1);
+    orderDetailList.add(o2);
+
+    orderDTO.setOrderDetailList(orderDetailList);
+
+    OrderDTO result =  orderService.create(orderDTO);
+    log.info(&quot;【创建订单】 result={}&quot;,result);
+
+    Assert.assertNotNull(result);
+
+
+}
+
+@Test
+public void findOne() {
+}
+
+@Test
+public void findList() {
+}
+
+@Test
+public void cancel() {
+}
+
+@Test
+public void finish() {
+}
+
+@Test
+public void paid() {
+}
+</code></pre><p>}</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/03/订单表创建/" rel="next" title="订单表创建">
+                <i class="fa fa-chevron-left"></i> 订单表创建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+   
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Junlong Chen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#当前项目结构"><span class="nav-number">1.</span> <span class="nav-text">当前项目结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成PayStatusEnum-java文件【enums】"><span class="nav-number">2.</span> <span class="nav-text">生成PayStatusEnum.java文件【enums】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成OrderDetail-java文件-【dataobject】"><span class="nav-number">3.</span> <span class="nav-text">生成OrderDetail.java文件 【dataobject】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成OrderDetailRepository-java文件-【repository】"><span class="nav-number">4.</span> <span class="nav-text">生成OrderDetailRepository.java文件 【repository】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成OrderDetailRepositoryTest-java-文件"><span class="nav-number">5.</span> <span class="nav-text">生成OrderDetailRepositoryTest.java 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成OrderDTO-java文件【DTO用于数据传输】"><span class="nav-number">6.</span> <span class="nav-text">生成OrderDTO.java文件【DTO用于数据传输】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成CartDTO-java文件-【DTO】"><span class="nav-number">7.</span> <span class="nav-text">生成CartDTO.java文件 【DTO】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成OrderService-java-service"><span class="nav-number">8.</span> <span class="nav-text">生成OrderService.java [service]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成SellException-java-【exception异常处理】"><span class="nav-number">9.</span> <span class="nav-text">生成SellException.java 【exception异常处理】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成KeyUtil-java文件-用于生成orderId-utils"><span class="nav-number">10.</span> <span class="nav-text">生成KeyUtil.java文件 用于生成orderId [utils]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成OrderServiceImpl-java文件-【service-impl】"><span class="nav-number">11.</span> <span class="nav-text">生成OrderServiceImpl.java文件 【service.impl】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成OrderServiceImplTest-java-测试"><span class="nav-number">12.</span> <span class="nav-text">生成OrderServiceImplTest.java 测试</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junlong Chen</span>
+
+  
+</div>
+
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+-->
+
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+
+<div class="powered-by">
+	<a href=http://www.miitbeian.gov.cn/>湘ICP备18009757号
+</a>
+</div>
+
+
+<!--
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+-->
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+ <!-- ҳ����С���� -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+<!-- �������� -->
+<script type="text/javascript" src="/js/src/particle.js"></script>
+
+
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+	
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
